@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!-- 相关路径配置 -->
+    <paths>
+        <projectPath>F:\workspace\TrueCloudServer</projectPath>
+
+        <!-- Domain -->
+        <entityPath>\TrueCloud-Web\Web-Domain\src\main\java\com\tscloud\system\entity</entityPath>
+        <providerInterfacePath>\TrueCloud-Web\Web-Domain\src\main\java\com\tscloud\system\providerdubbo</providerInterfacePath>
+
+        <!-- Web-UI -->
+        <consumerXmlFilePath>\TrueCloud-Web\Web-UI\src\main\resources\configs\dubbo-system-consumer.xml</consumerXmlFilePath>
+        <consumerClassFilePath>\TrueCloud-Web\Web-UI\src\main\java\com\tscloud\cloudui\consumer\SystemConsumer.java</consumerClassFilePath>
+        <restfulInterfacePath>\TrueCloud-Web\Web-UI\src\main\java\com\tscloud\cloudui\restful\system</restfulInterfacePath>
+        <restfulImplPath>\TrueCloud-Web\Web-UI\src\main\java\com\tscloud\cloudui\restful\system\impl</restfulImplPath>
+        <testerClassFilePath>\TrueCloud-Web\Web-UI\src\test\java\restful\system</testerClassFilePath>
+
+        <!-- Resouce-System -->
+        <mapperInterfacePath>\TrueCloud-Resource\Resource-System\src\main\java\com\tscloud\system\mapper</mapperInterfacePath>
+        <mapperXmlPath>\TrueCloud-Resource\Resource-System\src\main\resources\configs\mappers\mysql</mapperXmlPath>
+        <serviceInterfacePath>\TrueCloud-Resource\Resource-System\src\main\java\com\tscloud\system\service</serviceInterfacePath>
+        <serviceImplPath>\TrueCloud-Resource\Resource-System\src\main\java\com\tscloud\system\service\impl</serviceImplPath>
+        <providerXmlFilePath>\TrueCloud-Resource\Resource-System\src\main\resources\configs\dubbo-provider.xml</providerXmlFilePath>
+        <providerImplPath>\TrueCloud-Resource\Resource-System\src\main\java\com\tscloud\system\dubboservices</providerImplPath>
+        <serviceBeanClassFilePath>\TrueCloud-Resource\Resource-System\src\main\java\com\tscloud\system\utils\SystemServiceBean.java</serviceBeanClassFilePath>
+    </paths>
+
+
+    <tableCfg>
+        <!-- tablePrefix：表的前缀 -->
+        <tables tablePrefix="sys_">
+            <table>sys_config</table>
+        </tables>
+
+        <!--表中需要排除的字段，这些字段在生成entity时不会生成相应的属性-->
+        <excludedFields>
+            <field>id</field>
+            <field>create_date</field>
+            <field>update_date</field>
+            <field>operator_id</field>
+            <field>tenant_id</field>
+            <field>org_id</field>
+            <field>org_name</field>
+            <field>user_id</field>
+        </excludedFields>
+    </tableCfg>
+
+    <DatabaseCfg>
+        <url>jdbc:mysql://127.0.0.1:3306/system_db2</url>
+        <user>root</user>
+        <password>root</password>
+    </DatabaseCfg>
+
+    <restPathPrefix>SYSTEM</restPathPrefix>
+</config>

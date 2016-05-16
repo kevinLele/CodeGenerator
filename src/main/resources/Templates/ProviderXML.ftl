@@ -1,0 +1,2 @@
+    <dubbo:service interface="${entity.providerPackage}.I${entity.className?cap_first}Provider" ref="${entity.className}Provider" retries="0"/>
+    <bean id="${entity.className}Provider" class="com.tscloud.system.dubboservices.ConfigProviderImpl"/>

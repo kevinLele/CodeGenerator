@@ -1,0 +1,1 @@
+<dubbo:reference id="${entity.className}Provider" interface="${entity.providerPackage}.I${entity.className?cap_first}Provider"/>
